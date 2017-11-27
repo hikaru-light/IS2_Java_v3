@@ -43,22 +43,32 @@ class QuickSort extends Thread{
     sort(array, 0, array.length-1);
   }
 
-  private void sort(int[] d, int left, int right) {
+  private void sort(int[] array, int left, int right) {
     if (left>=right) {
       return;
     }
-    int p = d[(left+right)/2];
-    int l = left, r = right, tmp;
+
+    int p = array[(left+right)/2];
+    int l = left;
+    int r = right;
+    int tmp;
     while(l<=r) {
-      while(d[l] < p) { l++; }
-      while(d[r] > p) { r--; }
+      while(array[l] < p) {
+        l++;
+      }
+      while(array[r] > p) {
+        r--;
+      }
       if (l<=r) {
-        tmp = d[l]; d[l] = d[r]; d[r] = tmp;
-        l++; r--;
+        tmp = array[l];
+        array[l] = array[r];
+        array[r] = tmp;
+        l++;
+        r--;
       }
     }
-    sort(d, left, r);
-    sort(d, l, right);
+    sort(array, left, r);
+    sort(array, l, right);
   }
 
   public int[] getArray(){
