@@ -52,6 +52,7 @@ class QuickSort extends Thread{
     int l = left;
     int r = right;
     int tmp;
+    
     while(l<=r) {
       while(array[l] < p) {
         l++;
